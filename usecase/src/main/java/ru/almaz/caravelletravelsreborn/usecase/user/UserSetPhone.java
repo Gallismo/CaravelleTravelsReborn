@@ -3,23 +3,19 @@ package ru.almaz.caravelletravelsreborn.usecase.user;
 import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
-import ru.almaz.caravelletravelsreborn.infrastructure.validators.UserValidator;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserSetPhone extends UseCase<UserSetPhone.InputValues, UserSetPhone.OutputValues> {
-    private final UserRepository repository;
-    private final UserValidator validator;
+    private final IUserRepository repository;
 
-    public UserSetPhone(UserRepository repository, UserValidator validator) {
+    public UserSetPhone(IUserRepository repository) {
         this.repository = repository;
-        this.validator = validator;
     }
 
     @Override
     public OutputValues execute(InputValues input) {
         User user = repository.findById(input.id()).orElseThrow(() -> new UserNotFoundedException("User not founded"));
 
-        validator.validatePhone(input.phone());
         user.setPhone(input.phone());
 
         return new OutputValues(repository.save(user.getId(), user));

@@ -11,7 +11,7 @@
     <modules>
         <module>domain</module>
         <module>usecase</module>
-        <module>adapter</module>
+        <module>adapter/presentation</module>
     </modules>
 
     <properties>

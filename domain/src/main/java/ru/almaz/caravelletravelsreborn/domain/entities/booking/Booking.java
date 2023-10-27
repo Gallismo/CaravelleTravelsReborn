@@ -1,5 +1,7 @@
 package ru.almaz.caravelletravelsreborn.domain.entities.booking;
 
+import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
+
 import java.util.Date;
 
 public class Booking {
@@ -13,7 +15,9 @@ public class Booking {
     private Integer passengerCount;
     private BookingStatus status = BookingStatus.CREATING;
 
-    private Booking(Long id, Long userId, Date date, String fromPlace, String toPlace, String phone, String passengerName, Integer passengerCount, BookingStatus status) {
+    private final Date creationDate;
+
+    private Booking(Long id, Long userId, Date date, String fromPlace, String toPlace, String phone, String passengerName, Integer passengerCount, BookingStatus status, Date creationDate) {
         this.id = id;
         this.userId = userId;
         this.date = date;
@@ -23,6 +27,7 @@ public class Booking {
         this.passengerName = passengerName;
         this.passengerCount = passengerCount;
         this.status = status;
+        this.creationDate = creationDate;
     }
 
     public boolean isAllParametersField() {
@@ -39,6 +44,10 @@ public class Booking {
         if (otherBooking.passengerCount != null) this.passengerCount = otherBooking.passengerCount;
     }
 
+    public boolean isCreator(User user) {
+        return userId.equals(user.getId());
+    }
+
     public static BookingBuilder builder() {
         return new BookingBuilder();
     }
@@ -52,8 +61,8 @@ public class Booking {
         private String phone;
         private String passengerName;
         private Integer passengerCount;
-
         private BookingStatus status = BookingStatus.CREATING;
+        private Date creationDate = new Date();
 
         public BookingBuilder() {}
 
@@ -93,8 +102,12 @@ public class Booking {
             this.status = status;
             return this;
         }
+        public BookingBuilder creationDate(Date creationDate) {
+            this.creationDate = creationDate;
+            return this;
+        }
         public Booking build() {
-            return new Booking(id, userId, date, fromPlace, toPlace, phone, passengerName, passengerCount, status);
+            return new Booking(id, userId, date, fromPlace, toPlace, phone, passengerName, passengerCount, status, creationDate);
         }
     }
 
@@ -168,6 +181,10 @@ public class Booking {
 
     public void setStatus(BookingStatus status) {
         this.status = status;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
     }
 
     public enum BookingStatus {

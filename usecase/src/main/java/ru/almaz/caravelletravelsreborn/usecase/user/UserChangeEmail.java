@@ -2,21 +2,19 @@ package ru.almaz.caravelletravelsreborn.usecase.user;
 
 import ru.almaz.caravelletravelsreborn.domain.entities.user.CredentialReset;
 import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
+import ru.almaz.caravelletravelsreborn.exceptions.user.EmailAlreadyUsedException;
 import ru.almaz.caravelletravelsreborn.exceptions.user.InvalidResetTokenException;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserCredentialsResetsRepository;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
-import ru.almaz.caravelletravelsreborn.infrastructure.validators.UserValidator;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.ICredentialsResetsRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserChangeEmail extends UseCase<UserChangeEmail.InputValues, UserChangeEmail.OutputValues> {
-    private final UserRepository repository;
-    private final UserValidator validator;
-    private final UserCredentialsResetsRepository resetsRepository;
+    private final IUserRepository repository;
+    private final ICredentialsResetsRepository resetsRepository;
 
-    public UserChangeEmail(UserRepository repository, UserValidator validator, UserCredentialsResetsRepository resetsRepository) {
+    public UserChangeEmail(IUserRepository repository, ICredentialsResetsRepository resetsRepository) {
         this.repository = repository;
-        this.validator = validator;
         this.resetsRepository = resetsRepository;
     }
 
@@ -25,11 +23,13 @@ public class UserChangeEmail extends UseCase<UserChangeEmail.InputValues, UserCh
         CredentialReset reset = resetsRepository.findByToken(input.resetToken()).orElseThrow(() -> new InvalidResetTokenException("Invalid token"));
         User user = repository.findById(reset.getUserId()).orElseThrow(() -> new UserNotFoundedException("User not founded"));
 
+        if (repository.findByEmail(input.newEmail()).isPresent()) {
+            throw new EmailAlreadyUsedException("Email used!");
+        }
         if (reset.isExpired()) {
             throw new InvalidResetTokenException("Token is expired");
         }
 
-        validator.validateEmail(input.newEmail());
         user.setEmail(input.newEmail());
 
         return new OutputValues(repository.save(user.getId(), user));

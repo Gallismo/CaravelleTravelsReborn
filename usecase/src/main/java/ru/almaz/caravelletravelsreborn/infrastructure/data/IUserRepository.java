@@ -5,7 +5,7 @@ import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import java.util.List;
 import java.util.Optional;
 
-public interface UserRepository {
+public interface IUserRepository {
     Optional<User> findById(Long id);
     Optional<User> findByName(String name);
     Optional<User> findByEmail(String email);

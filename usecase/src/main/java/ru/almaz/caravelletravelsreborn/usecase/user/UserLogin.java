@@ -4,15 +4,15 @@ import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.exceptions.user.InvalidCredentialsException;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.PasswordEncoder;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.IPasswordEncoder;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserLogin extends UseCase<UserLogin.InputValues, UserLogin.OutputValues> {
-    private final UserRepository repository;
-    private final PasswordEncoder passwordEncoder;
+    private final IUserRepository repository;
+    private final IPasswordEncoder passwordEncoder;
 
 
-    public UserLogin(UserRepository repository, PasswordEncoder passwordEncoder) {
+    public UserLogin(IUserRepository repository, IPasswordEncoder passwordEncoder) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
     }

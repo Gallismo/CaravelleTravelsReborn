@@ -3,12 +3,12 @@ package ru.almaz.caravelletravelsreborn.usecase.user;
 import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserSetName extends UseCase<UserSetName.InputValues, UserSetName.OutputValues> {
-    private final UserRepository repository;
+    private final IUserRepository repository;
 
-    public UserSetName(UserRepository repository) {
+    public UserSetName(IUserRepository repository) {
         this.repository = repository;
     }
 

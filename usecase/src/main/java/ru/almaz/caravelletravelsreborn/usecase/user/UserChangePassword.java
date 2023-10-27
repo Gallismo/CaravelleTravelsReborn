@@ -5,20 +5,17 @@ import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.exceptions.user.InvalidResetTokenException;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.PasswordEncoder;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserCredentialsResetsRepository;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
-import ru.almaz.caravelletravelsreborn.infrastructure.validators.UserValidator;
+import ru.almaz.caravelletravelsreborn.infrastructure.IPasswordEncoder;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.ICredentialsResetsRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserChangePassword extends UseCase<UserChangePassword.InputValues, UserChangePassword.OutputValues> {
-    private final UserRepository repository;
-    private final UserValidator validator;
-    private final PasswordEncoder passwordEncoder;
-    private final UserCredentialsResetsRepository resetsRepository;
+    private final IUserRepository repository;
+    private final IPasswordEncoder passwordEncoder;
+    private final ICredentialsResetsRepository resetsRepository;
 
-    public UserChangePassword(UserRepository repository, UserValidator validator, PasswordEncoder passwordEncoder, UserCredentialsResetsRepository resetsRepository) {
+    public UserChangePassword(IUserRepository repository, IPasswordEncoder passwordEncoder, ICredentialsResetsRepository resetsRepository) {
         this.repository = repository;
-        this.validator = validator;
         this.passwordEncoder = passwordEncoder;
         this.resetsRepository = resetsRepository;
     }
@@ -32,7 +29,6 @@ public class UserChangePassword extends UseCase<UserChangePassword.InputValues, 
             throw new InvalidResetTokenException("Token is expired");
         }
 
-        validator.validatePassword(input.newPassword());
         user.setPassword(passwordEncoder.encode(input.newPassword()));
 
         return new OutputValues(repository.save(user.getId(), user));

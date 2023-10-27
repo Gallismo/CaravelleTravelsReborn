@@ -1,5 +1,5 @@
 package ru.almaz.caravelletravelsreborn.infrastructure.data;
 
-public interface BookingIdGenerator {
+public interface IBookingIdGenerator {
     Long generate();
 }

@@ -1,5 +1,5 @@
 package ru.almaz.caravelletravelsreborn.infrastructure.data;
 
-public interface CredentialsResetsIdGenerator {
+public interface IUserIdGenerator {
     Long generate();
 }

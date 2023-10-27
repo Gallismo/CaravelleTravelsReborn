@@ -2,15 +2,15 @@ package ru.almaz.caravelletravelsreborn.usecase.user.find;
 
 import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 import java.util.List;
 
 public class UserFindAllByPermissions extends UseCase<UserFindAllByPermissions.InputValues, UserFindAllByPermissions.OutputValues> {
-    private final UserRepository repository;
+    private final IUserRepository repository;
 
 
-    public UserFindAllByPermissions(UserRepository repository) {
+    public UserFindAllByPermissions(IUserRepository repository) {
         this.repository = repository;
     }
 

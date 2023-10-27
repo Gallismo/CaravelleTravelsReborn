@@ -4,22 +4,22 @@ import ru.almaz.caravelletravelsreborn.domain.entities.user.CredentialReset;
 import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.dto.EmailMessageDTO;
-import ru.almaz.caravelletravelsreborn.infrastructure.EmailService;
-import ru.almaz.caravelletravelsreborn.infrastructure.ResetCredentialsTokenGenerator;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.CredentialsResetsIdGenerator;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserCredentialsResetsRepository;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
+import ru.almaz.caravelletravelsreborn.dto.EmailResetMessageDTO;
+import ru.almaz.caravelletravelsreborn.infrastructure.IEmailProvider;
+import ru.almaz.caravelletravelsreborn.infrastructure.IResetCredentialsTokenGenerator;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.ICredentialsResetsIdGenerator;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.ICredentialsResetsRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserChangeEmailRequest extends UseCase<UserChangeEmailRequest.InputValues, UserChangeEmailRequest.OutputValues> {
-    private final UserRepository repository;
-    private final ResetCredentialsTokenGenerator tokenGenerator;
-    private final UserCredentialsResetsRepository resetsRepository;
-    private final CredentialsResetsIdGenerator idGenerator;
-    private final EmailService emailService;
+    private final IUserRepository repository;
+    private final IResetCredentialsTokenGenerator tokenGenerator;
+    private final ICredentialsResetsRepository resetsRepository;
+    private final ICredentialsResetsIdGenerator idGenerator;
+    private final IEmailProvider emailService;
 
 
-    public UserChangeEmailRequest(UserRepository repository, ResetCredentialsTokenGenerator tokenGenerator, UserCredentialsResetsRepository resetsRepository, CredentialsResetsIdGenerator idGenerator, EmailService emailService) {
+    public UserChangeEmailRequest(IUserRepository repository, IResetCredentialsTokenGenerator tokenGenerator, ICredentialsResetsRepository resetsRepository, ICredentialsResetsIdGenerator idGenerator, IEmailProvider emailService) {
         this.repository = repository;
         this.tokenGenerator = tokenGenerator;
         this.resetsRepository = resetsRepository;
@@ -36,13 +36,13 @@ public class UserChangeEmailRequest extends UseCase<UserChangeEmailRequest.Input
 
         reset = resetsRepository.save(reset.getId(), reset);
 
-        emailService.sendEmail(new EmailMessageDTO(user.getEmail(), "Email reset", reset.getToken()));
+        emailService.sendResetMessage(new EmailResetMessageDTO(user,  reset));
 
-        return new OutputValues();
+        return new OutputValues(reset);
     }
 
     public record InputValues(Long id) implements UseCase.InputValues {
     }
-    public record OutputValues() implements UseCase.OutputValues {
+    public record OutputValues(CredentialReset reset) implements UseCase.OutputValues {
     }
 }

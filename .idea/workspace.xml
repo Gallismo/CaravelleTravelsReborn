@@ -4,63 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49265ff9-51bb-47ca-83cc-9722af17983e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/ru/almaz/caravelletravelsreborn/domain/entities/booking/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/ru/almaz/caravelletravelsreborn/domain/entities/user/CredentialReset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/ru/almaz/caravelletravelsreborn/domain/entities/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/dto/EmailMessageDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/UseCaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingAlreadyCreatingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/EmailAlreadyUsedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/InvalidCredentialsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/InvalidResetTokenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/NotAllowedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/UserNotFoundedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/UserValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/AdminsNotifyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/PasswordEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/ResetCredentialsTokenGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/BookingIdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/BookingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/CredentialsResetsIdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/UserCredentialsResetsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/UserIdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/validators/BookingValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/validators/UserValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/UseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingSetStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangeEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangeEmailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangePassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangePasswordRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserSetName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserSetPhone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByPermissions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByPhone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByPhone.java" afterDir="false" />
+    <list default="true" id="49265ff9-51bb-47ca-83cc-9722af17983e" name="Changes" comment="use cases and entities">
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/bot/BotCommands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/bot/BotExceptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/bot/BotService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/bot/IBotTextProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/controller/BookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/dto/AnswerAndBookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/dto/CreateBookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/dto/UpdateBookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/PresentationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/UserValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/model/BookingView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/model/UserView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingIsNotCreatedBySpecUserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingNotFilledException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingSetProcessedStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/find/BookingFindAllLastByUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/find/BookingFindFirstById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/ru/almaz/caravelletravelsreborn/domain/entities/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/ru/almaz/caravelletravelsreborn/domain/entities/booking/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/dto/EmailMessageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/dto/EmailResetMessageDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingAlreadyCreatingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingAlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/booking/BookingValidationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/NotAllowedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/NoPermissionsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/exceptions/user/UserValidationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/AdminsNotifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/presentation/src/main/java/ru/almaz/caravelletravelsreborn/controller/IAdminsNotifyProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/IEmailProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/PasswordEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/IPasswordEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/ResetCredentialsTokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/IResetCredentialsTokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/BookingIdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/IBookingIdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/IBookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/CredentialsResetsIdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/ICredentialsResetsIdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/UserCredentialsResetsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/ICredentialsResetsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/UserIdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/IUserIdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/data/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/validators/BookingValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/infrastructure/validators/UserValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingCreate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingSetStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingSetCreatedStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/booking/BookingUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangeEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangeEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangeEmailRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangeEmailRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangePasswordRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserChangePasswordRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserCreate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserSetName.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserSetName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserSetPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/UserSetPhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByPermissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindAllByPhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindById.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/src/main/java/ru/almaz/caravelletravelsreborn/usecase/user/find/UserFindByPhone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +77,8 @@
       <list>
         <option value="module-info" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +101,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects Java/CaravelleTravelsReborn/domain/src/main/java/ru/almaz&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects Java/CaravelleTravelsReborn/adapter&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -111,10 +116,11 @@
       <recent name="D:\Projects Java\CaravelleTravelsReborn\domain\src\main\java\ru\almaz" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.almaz.caravelletravelsreborn.dto" />
+      <recent name="ru.almaz.caravelletravelsreborn.usecase.booking.find" />
+      <recent name="ru.almaz.caravelletravelsreborn.usecase.booking" />
       <recent name="ru.almaz.caravelletravelsreborn.usecase.user.find" />
       <recent name="ru.almaz.caravelletravelsreborn.usecase.user" />
-      <recent name="ru.almaz.caravelletravelsreborn.usecase.booking" />
-      <recent name="ru.almaz.caravelletravelsreborn.domain.exceptions.user" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -136,8 +142,21 @@
       <workItem from="1697454128080" duration="1821000" />
       <workItem from="1697646043970" duration="4111000" />
       <workItem from="1697702963119" duration="1181000" />
-      <workItem from="1697787620831" duration="412000" />
+      <workItem from="1697787620831" duration="781000" />
+      <workItem from="1697865056909" duration="14664000" />
+      <workItem from="1697958030697" duration="5352000" />
+      <workItem from="1698127140827" duration="5144000" />
+      <workItem from="1698214691699" duration="7371000" />
+      <workItem from="1698393753439" duration="6886000" />
     </task>
+    <task id="LOCAL-00001" summary="use cases and entities">
+      <created>1697788359693</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697788359693</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,5 +172,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="use cases and entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="use cases and entities" />
   </component>
 </project>

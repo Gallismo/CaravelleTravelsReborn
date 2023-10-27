@@ -3,13 +3,13 @@ package ru.almaz.caravelletravelsreborn.usecase.user;
 import ru.almaz.caravelletravelsreborn.domain.entities.user.User;
 import ru.almaz.caravelletravelsreborn.exceptions.user.UserNotFoundedException;
 import ru.almaz.caravelletravelsreborn.usecase.UseCase;
-import ru.almaz.caravelletravelsreborn.infrastructure.data.UserRepository;
+import ru.almaz.caravelletravelsreborn.infrastructure.data.IUserRepository;
 
 public class UserDelete extends UseCase<UserDelete.InputValues, UserDelete.OutputValues> {
-    private final UserRepository repository;
+    private final IUserRepository repository;
 
 
-    public UserDelete(UserRepository repository) {
+    public UserDelete(IUserRepository repository) {
         this.repository = repository;
     }
 
