@@ -2,8 +2,8 @@ package ru.almaz.caravelletravelsreborn.exceptions.booking;
 
 import ru.almaz.caravelletravelsreborn.exceptions.BookingException;
 
-public class BookingNotFoundException extends BookingException {
-    public BookingNotFoundException(String message) {
+public class BookingCommittedException extends BookingException {
+    public BookingCommittedException(String message) {
         super(message);
     }
 }

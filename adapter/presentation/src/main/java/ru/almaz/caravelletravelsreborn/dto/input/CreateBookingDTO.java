@@ -1,4 +1,4 @@
-package ru.almaz.caravelletravelsreborn.dto;
+package ru.almaz.caravelletravelsreborn.dto.input;
 
 import lombok.Builder;
 
@@ -11,12 +11,12 @@ public class CreateBookingDTO {
     public String toPlace;
     public String phone;
     public String passengerName;
-    public Integer passengerCount;
+    public String passengerCount;
 
     public CreateBookingDTO() {
     }
 
-    public CreateBookingDTO(String date, String fromPlace, String toPlace, String phone, String passengerName, Integer passengerCount) {
+    public CreateBookingDTO(String date, String fromPlace, String toPlace, String phone, String passengerName, String passengerCount) {
         this.date = date;
         this.fromPlace = fromPlace;
         this.toPlace = toPlace;

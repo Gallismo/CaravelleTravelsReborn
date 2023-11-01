@@ -1,33 +1,37 @@
 package ru.almaz.caravelletravelsreborn.controller;
 
 
-import ru.almaz.caravelletravelsreborn.dto.CreateBookingDTO;
-import ru.almaz.caravelletravelsreborn.dto.UpdateBookingDTO;
+import ru.almaz.caravelletravelsreborn.dto.input.CreateBookingDTO;
+import ru.almaz.caravelletravelsreborn.dto.input.UpdateBookingDTO;
+import ru.almaz.caravelletravelsreborn.infrastructure.IAdminsNotifyProvider;
 import ru.almaz.caravelletravelsreborn.model.BookingView;
 import ru.almaz.caravelletravelsreborn.model.UserView;
-import ru.almaz.caravelletravelsreborn.usecase.booking.BookingCreate;
-import ru.almaz.caravelletravelsreborn.usecase.booking.BookingSetCreatedStatus;
-import ru.almaz.caravelletravelsreborn.usecase.booking.BookingSetProcessedStatus;
-import ru.almaz.caravelletravelsreborn.usecase.booking.BookingUpdate;
-
-import java.text.ParseException;
+import ru.almaz.caravelletravelsreborn.usecase.booking.*;
+import ru.almaz.caravelletravelsreborn.usecase.booking.find.BookingFindFirstById;
+import ru.almaz.caravelletravelsreborn.validation.BookingValidator;
 
 public class BookingController {
     private final BookingCreate bookingCreate;
     private final BookingUpdate bookingUpdate;
     private final BookingSetCreatedStatus bookingSetCreatedStatus;
     private final BookingSetProcessedStatus bookingSetProcessedStatus;
+    private final BookingCancel bookingCancel;
+    private final BookingFindFirstById bookingFindFirstById;
     private final IAdminsNotifyProvider notifyProvider;
 
-    public BookingController(BookingCreate bookingCreate, BookingUpdate bookingUpdate, BookingSetCreatedStatus bookingSetCreatedStatus, BookingSetProcessedStatus bookingSetProcessedStatus, IAdminsNotifyProvider notifyProvider) {
+    public BookingController(BookingCreate bookingCreate, BookingUpdate bookingUpdate, BookingSetCreatedStatus bookingSetCreatedStatus, BookingSetProcessedStatus bookingSetProcessedStatus, BookingCancel bookingCancel, BookingFindFirstById bookingFindFirstById, IAdminsNotifyProvider notifyProvider) {
         this.bookingCreate = bookingCreate;
         this.bookingUpdate = bookingUpdate;
         this.bookingSetCreatedStatus = bookingSetCreatedStatus;
         this.bookingSetProcessedStatus = bookingSetProcessedStatus;
+        this.bookingCancel = bookingCancel;
+        this.bookingFindFirstById = bookingFindFirstById;
         this.notifyProvider = notifyProvider;
     }
 
-    public BookingView createBooking(UserView userView, CreateBookingDTO dto) throws ParseException {
+    public BookingView createBooking(UserView userView, CreateBookingDTO dto) {
+        BookingValidator.validate(dto);
+
         BookingView bookingView = BookingView.builder()
                 .date(dto.date)
                 .fromPlace(dto.fromPlace)
@@ -38,11 +42,12 @@ public class BookingController {
                 .build();
 
         BookingCreate.InputValues input = new BookingCreate.InputValues(bookingView.toBooking(), userView.toUser());
-
         return BookingView.fromBooking(bookingCreate.execute(input).booking());
     }
 
-    public BookingView updateBooking(UserView userView, UpdateBookingDTO dto) throws ParseException {
+    public BookingView updateBooking(UserView userView, UpdateBookingDTO dto) {
+        BookingValidator.validate(dto);
+
         BookingView bookingView = BookingView.builder()
                 .id(dto.id)
                 .date(dto.date)
@@ -54,7 +59,6 @@ public class BookingController {
                 .build();
 
         BookingUpdate.InputValues input = new BookingUpdate.InputValues(bookingView.toBooking(), userView.toUser());
-
         return BookingView.fromBooking(bookingUpdate.execute(input).booking());
     }
 
@@ -71,5 +75,17 @@ public class BookingController {
         BookingSetProcessedStatus.InputValues input = new BookingSetProcessedStatus.InputValues(bookingId, userView.toUser());
 
         return BookingView.fromBooking(bookingSetProcessedStatus.execute(input).booking());
+    }
+
+    public BookingView cancelBooking(UserView userView, Long bookingId) {
+        BookingCancel.InputValues input = new BookingCancel.InputValues(bookingId, userView.toUser());
+
+        return BookingView.fromBooking(bookingCancel.execute(input).booking());
+    }
+
+    public BookingView findBookingById(UserView userView, Long bookingId) {
+        BookingFindFirstById.InputValues input = new BookingFindFirstById.InputValues(bookingId, userView.toUser());
+
+        return BookingView.fromBooking(bookingFindFirstById.execute(input).booking());
     }
 }

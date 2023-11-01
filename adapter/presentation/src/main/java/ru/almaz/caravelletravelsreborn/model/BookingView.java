@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.almaz.caravelletravelsreborn.domain.entities.booking.Booking;
+import ru.almaz.caravelletravelsreborn.exceptions.booking.BookingValidationException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,10 +21,10 @@ public class BookingView {
     public String toPlace;
     public String phone;
     public String passengerName;
-    public Integer passengerCount;
+    public String passengerCount;
     public BookingStatus status;
 
-    public BookingView(Long id, Long userId, String date, String fromPlace, String toPlace, String phone, String passengerName, Integer passengerCount) {
+    public BookingView(Long id, Long userId, String date, String fromPlace, String toPlace, String phone, String passengerName, String passengerCount) {
         this.id = id;
         this.userId = userId;
         this.date = date;
@@ -38,16 +39,20 @@ public class BookingView {
         return new SimpleDateFormat("dd.MM.yyyy");
     }
 
-    public Booking toBooking() throws ParseException {
-        return Booking.builder()
-                .userId(userId)
-                .date(dateFormatter().parse(date))
-                .fromPlace(fromPlace)
-                .toPlace(toPlace)
-                .phone(phone)
-                .passengerName(passengerName)
-                .passengerCount(passengerCount)
-                .build();
+    public Booking toBooking() {
+        try {
+            return Booking.builder()
+                    .userId(userId)
+                    .date(dateFormatter().parse(date))
+                    .fromPlace(fromPlace)
+                    .toPlace(toPlace)
+                    .phone(phone)
+                    .passengerName(passengerName)
+                    .passengerCount(Integer.parseInt(passengerCount))
+                    .build();
+        } catch (ParseException e) {
+            throw new BookingValidationException("Date invalid to parse", BookingValidationException.Reason.DATE);
+        }
     }
 
     public static BookingView fromBooking(Booking booking) {
@@ -59,7 +64,7 @@ public class BookingView {
         view.toPlace = booking.getToPlace();
         view.phone = booking.getPhone();
         view.passengerName = booking.getPassengerName();
-        view.passengerCount = booking.getPassengerCount();
+        view.passengerCount = booking.getPassengerCount().toString();
 
         switch (booking.getStatus()) {
             case CREATING -> view.status = BookingStatus.CREATING;

@@ -1,4 +1,4 @@
-package ru.almaz.caravelletravelsreborn.dto;
+package ru.almaz.caravelletravelsreborn.dto.input;
 
 import lombok.Builder;
 
@@ -10,7 +10,7 @@ public class UpdateBookingDTO {
     public String toPlace;
     public String phone;
     public String passengerName;
-    public Integer passengerCount;
+    public String passengerCount;
 
     public UpdateBookingDTO() {
     }

@@ -1,4 +1,4 @@
-package ru.almaz.caravelletravelsreborn.controller;
+package ru.almaz.caravelletravelsreborn.infrastructure;
 
 import ru.almaz.caravelletravelsreborn.domain.entities.booking.Booking;
 import ru.almaz.caravelletravelsreborn.model.BookingView;

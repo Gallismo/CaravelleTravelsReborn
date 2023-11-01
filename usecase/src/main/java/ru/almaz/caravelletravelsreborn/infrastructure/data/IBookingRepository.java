@@ -28,4 +28,5 @@ public interface IBookingRepository {
     List<Booking> findByStatusAndDate(Date date, Booking.BookingStatus status, Integer limit, Integer offset);
 //  Save or update user
     Booking save(Long id, Booking booking);
+    Booking delete(Booking booking);
 }
