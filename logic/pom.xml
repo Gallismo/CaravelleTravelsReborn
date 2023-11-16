@@ -2,18 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>CaravelleTravelsReborn</artifactId>
+        <groupId>ru.almaz.caravelletravelsreborn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.almaz.caravelletravelsreborn</groupId>
-    <artifactId>CaravelleTravelsReborn</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>domain</module>
-        <module>logic</module>
-        <module>adapter/presentation</module>
-        <module>bottext/SpringDBTextProvider</module>
-    </modules>
+    <artifactId>logic</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>ru.almaz.caravelletravelsreborn</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
